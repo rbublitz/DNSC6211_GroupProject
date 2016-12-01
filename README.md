@@ -1,5 +1,5 @@
 # DNSC6211_GroupProject
-Utilizing programming tools taught in the course to advise an investor on Baltimore City properties for residential rental income
+Utilizing programming tools taught in the course to advise an investor on Baltimore City properties for residential rental income. Course: Programming for Analytics, The George Washington University, MS Business Analytics Program. 
 
 # Group members:
 
