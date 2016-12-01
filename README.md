@@ -2,9 +2,13 @@
 Utilizing programming tools taught in the course to advise an investor on Baltimore City properties for residential rental income
 
 Group members:
+
 Roxanne Bublitz
+
 Yuanjing Han
+
 Jingning Li
+
 Rongchu Zhao
 
 
