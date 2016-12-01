@@ -1,0 +1,51 @@
+---
+title: "regression_rent"
+output: html_document
+---
+
+## Preparing the regression
+## Since the sales data doesnt have the unit type so in the final model we take it out.
+## Changing the numeric variables to log form, because there are not normaly distributed.
+```{r}
+rent<-read.csv('rent.csv', header=TRUE)
+rent$X <- NULL
+rent$unittype<-NULL
+newdata <- na.omit(rent)
+hist(newdata$price)
+hist(newdata$crime_rate)
+hist(newdata$sqft)
+newdata$rent <- log(newdata$price)
+newdata$crime_rate<-log(newdata$crime_rate)
+newdata$sqft<-log(newdata$sqft)
+```
+## Right now, creating the train and test data set.
+```{r}
+library(MASS)
+ind<-sample(2,nrow(newdata),replace=TRUE,prob = c(0.8,0.2))
+train<-newdata[ind==1,]
+test<-newdata[ind==2,]
+fit <- lm(rent~bedrooms+baths+distance+sqft+crime_rate,data=train)
+step <- stepAIC(fit, direction="both")
+step$anova
+fiit<-lm(rent~bedrooms+baths+distance+sqft+crime_rate,data=train)
+prediction<-predict(fiit,test)
+prediction<-as.data.frame(prediction)
+names(prediction) = c("pre")
+prediction$pre<-as.numeric(prediction$pre)
+D<-cbind(prediction,test) #combine the predicted value into the test dataset
+D$Difference <- abs(D$rent - D$pre)
+summary(D$rent)
+summary(D$Difference)
+```
+## We can see from above result, the bias between training and test set is not quiet obvious and this is the best model we can get. So, we decided to take it as our final model. 
+## Using stepwise first to set up the final model and then get the statistic parameters.
+```{r}
+fit <- lm(rent~bedrooms+baths+distance+sqft+crime_rate,data=newdata)
+step <- stepAIC(fit, direction="both")
+step$anova
+```
+## Let's take a look of the statistic of our model
+```{r}
+fitt<-lm(rent~baths+distance+sqft+crime_rate+bedrooms,data=newdata)
+summary(fitt)
+```
