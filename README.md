@@ -24,6 +24,6 @@ Example map output, green properties provide a higher ratio of predicted rent to
 
    ![Rent to Sale Ratio Map](/images/ratiomap.png?)
    
-Example Shiny App home screen. App is interactive and displays target rental prices considering mortagage payments and ideal profit. Other tabs show the trends for median sale price and price to rent ratio for that zip code. 
+Example Shiny App home screen. App is interactive and displays target rental prices considering mortgage payments and ideal profit. Other tabs show the trends for median sale price and price-to-rent ratio for that zip code. 
 
    ![Shiny App](/images/Shinyimg.png?)
