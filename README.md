@@ -1,7 +1,7 @@
 # DNSC6211_GroupProject
 Utilizing programming tools taught in the course to advise an investor on Baltimore City properties for residential rental income
 
-Group members:
+# Group members:
 
 Roxanne Bublitz
 
@@ -12,7 +12,7 @@ Jingning Li
 Rongchu Zhao
 
 
-Code included produces:
+# Code included produces:
 
 1. A CSV file of properties ranked by predicted rent to sales price ratio
 
