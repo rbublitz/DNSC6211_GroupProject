@@ -11,4 +11,4 @@ Code included produces:
 
 Example map output, green properties provide a higher ratio of predicted rent to listed sales price.
 
-... ![Rent to Sale Ratio Map](/images/ratiomap.png?)
+   ![Rent to Sale Ratio Map](/images/ratiomap.png?)
